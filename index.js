@@ -1,28 +1,22 @@
-// Import Nodemailer module
-const nodemailer = require('nodemailer');
+const express = require('express');
+const multer = require ('multer');
+const app = express();
 
-// Create a transporter using SMTP transport
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-        user: 'rushikeshtekale918@gmail.com',  // Your Gmail email address
-        pass: 'Rushi7887'           // Your Gmail password
-    }
-});
- 
-// Define email content
-let mailOptions = {
-    from: 'rushikeshtekale918@gmail.com',
-    to: 'rushikeshtekale918@gmail.com',
-    subject: 'Test Email',
-    text: 'This is a test email from Node.js using Nodemailer.'
-};
+const upload = multer({
+    storage : multer.diskStorage({
+        destination:function(req, file, callBack)
+        {
+            callBack(null, "uploads")
+        },
+        filename:function(req, file, callBack)
+        {
+            callBack(null, file.fieldname+"-"+Date.now()+".jpg")
+        }
+    })
+}).single("user_file")
 
-// Send email
-transporter.sendMail(mailOptions, function(error, info){
-    if (error) {
-        console.log(error);
-    } else {
-        console.log('Email sent: ' + info.response);
-    }
-});
+app.post('/upload', upload, (req, res)=>{
+    res.send("File uploaded");
+})
+
+app.listen(1000);
