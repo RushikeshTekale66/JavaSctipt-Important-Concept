@@ -1,12 +1,28 @@
-//Filter in JavaScript
-// Filter() method creates a new array filled with elements that pass a test provided by a function.
-// The filter() method does not execute the function for empty elements.
-// The filter() method does not change the original array.
-// It return the true or false result
+// Import Nodemailer module
+const nodemailer = require('nodemailer');
 
-const ages = [32, 33, 16, 40];
-const result = ages.filter(checkAdult);
+// Create a transporter using SMTP transport
+let transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'rushikeshtekale918@gmail.com',  // Your Gmail email address
+        pass: 'Rushi7887'           // Your Gmail password
+    }
+});
+ 
+// Define email content
+let mailOptions = {
+    from: 'rushikeshtekale918@gmail.com',
+    to: 'rushikeshtekale918@gmail.com',
+    subject: 'Test Email',
+    text: 'This is a test email from Node.js using Nodemailer.'
+};
 
-function checkAdult(age) {
-  return console.log(age >= 18);;
-}
+// Send email
+transporter.sendMail(mailOptions, function(error, info){
+    if (error) {
+        console.log(error);
+    } else {
+        console.log('Email sent: ' + info.response);
+    }
+});
