@@ -1,22 +1,32 @@
-const express = require('express');
-const multer = require ('multer');
-const app = express();
+// Simple function
 
-const upload = multer({
-    storage : multer.diskStorage({
-        destination:function(req, file, callBack)
-        {
-            callBack(null, "uploads")
-        },
-        filename:function(req, file, callBack)
-        {
-            callBack(null, file.fieldname+"-"+Date.now()+".jpg")
-        }
-    })
-}).single("user_file")
+// Without argeument
+function fun() {
+    console.log("Function without argument");
+}
 
-app.post('/upload', upload, (req, res)=>{
-    res.send("File uploaded");
-})
+fun();
 
-app.listen(1000);
+// Function with argument
+function average(x, y) {
+    return (x + y) / 2;
+}
+
+let a = 10;
+let b = 20;
+
+console.log("Average is ", average(a, b));
+
+// Arrow function
+
+let arrfun = ()=>{
+    console.log("Arrow function with out argument");
+}
+arrfun();
+
+// Arrow function with argument
+let sum = (x, y) => {
+    return x + y;
+}
+
+console.log("Sum is ", sum(a, b));
