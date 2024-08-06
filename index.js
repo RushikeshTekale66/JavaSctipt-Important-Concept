@@ -1,28 +1,25 @@
-const express = require ("express");
-const cookieParser = require("cookie-parser");
+let a = 10;
+let b = 10;
+ let result = a+b;
 
-const app = express();
-app.use(cookieParser());
+ let promice = new Promise(function(resolve, reject){
+    console.log("Hellow");
+    
+    resolve(50);
+ })
 
-const user = {
-    name:"Rushikesh",
-    roll:10
+async function Time(){
+    setTimeout(async ()=>{
+       return await console.log("Time");
+        
+        
+    }, 2000);
 }
 
-app.get("/", (req, res)=>{
-    res.send("Site is ok");
-})
 
-// set the cookie to the client side
-app.get("/setcookie", (req, res)=>{
-    res.cookie("user", user);
-    res.send("Cookie settled")
-
-})
-
-// get the cookies form client request
-app.get("/getcookie", (req, res)=>{
-    res.send(req.cookies);
-})
-
-app.listen(5000, ()=>console.log("Site is live"));
+console.log(promice);
+Time();
+ console.log(result);
+ 
+ 
+ 

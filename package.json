@@ -15,9 +15,5 @@
   "bugs": {
     "url": "https://github.com/RushikeshTekale66/JavaSctipt-Important-Concept/issues"
   },
-  "homepage": "https://github.com/RushikeshTekale66/JavaSctipt-Important-Concept#readme",
-  "dependencies": {
-    "cookie-parser": "^1.4.6",
-    "express": "^4.19.2"
-  }
+  "homepage": "https://github.com/RushikeshTekale66/JavaSctipt-Important-Concept#readme"
 }
