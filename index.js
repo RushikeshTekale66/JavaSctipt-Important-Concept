@@ -1,14 +1,17 @@
-function Person(name, age, gender){
-   this.name = name;
-   this.age = age;
-   this.gender = gender;
+const Person = {
+   name : "Rushikesh",
+   age : 23,
+   occupition : "Software developer"
 }
 
-let person1 = new Person("Rushikesh", 22, "Male");
+//Before es6
+const name1 = Person.name;
+const age1 = Person.age;
 
-console.log(person1);
+console.log("Name : " + name1 + " Age : " + age1);
 
-let person2 = new Person ("Rohan", 23, "Male");
+//ES6
 
-console.log(person2);
+const {name , age} = Person;
+console.log(name, age);
 
