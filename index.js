@@ -1,13 +1,14 @@
-function computeSum(arr){
-   if(arr.length===1){
-      return arr[0];
-   }
-   else{
-      // Function call
-      return arr.pop() + computeSum(arr);
-   }
+function Person(name, age, gender){
+   this.name = name;
+   this.age = age;
+   this.gender = gender;
 }
 
-let result = computeSum([1, 2, 3, 4, 5]);
+let person1 = new Person("Rushikesh", 22, "Male");
 
-console.log(result);
+console.log(person1);
+
+let person2 = new Person ("Rohan", 23, "Male");
+
+console.log(person2);
+
