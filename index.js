@@ -1,25 +1,16 @@
-let a = 10;
-let b = 10;
- let result = a+b;
-
- let promice = new Promise(function(resolve, reject){
-    console.log("Hellow");
-    
-    resolve(50);
- })
-
-async function Time(){
-    setTimeout(async ()=>{
-       return await console.log("Time");
-        
-        
-    }, 2000);
+let name = {
+   fname : "Rushikesh",
+   lname : "Tekale"
 }
 
+ let getdata = function getName(){
+   console.log("Name is : " + this.fname + ", Lname : " + this.lname);
+}
 
-console.log(promice);
-Time();
- console.log(result);
- 
- 
- 
+let name2 = {
+   fname:"Rohan",
+   lname : "Tekale"
+}
+
+getdata.call(name2);
+getdata.call(name);
