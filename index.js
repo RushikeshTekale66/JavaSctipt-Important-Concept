@@ -1,18 +1,13 @@
-// Callback function
-function division(sum){
-   console.log(Math.floor(sum/2));
+function computeSum(arr){
+   if(arr.length===1){
+      return arr[0];
+   }
+   else{
+      // Function call
+      return arr.pop() + computeSum(arr);
+   }
 }
 
-function operation (num1, num2, operation){
-   let sum = num1 + num2;
-   operation(sum);
-}
+let result = computeSum([1, 2, 3, 4, 5]);
 
-// Function is passed as argument to the another function
-operation(10, 20, division);
-
-
-
-
-
-
+console.log(result);
