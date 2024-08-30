@@ -8,16 +8,24 @@ let name2 = {
    lname : "Tekale"
 }
 
-let getdata = function getName(hometown, city){
+function getName(hometown, city){
    console.log("Name is : " + this.fname + ", Lname : " + this.lname + ", Hometown : " + hometown + ", City : " + city);
 }
 
-let bindMethod = getdata.bind(name2, "Kolegaon", "Dharashiv");
-let bindMethod2 = getdata.bind(name, "Kolegaon", "Pune");
 
-console.log(bindMethod);
+//Call() : It invoke a function by specifying ownwe object
+getName.call(name2, "Kolegaon", "Dharashiv");
+getName.call(name, "Kolegaon", "Pune");
+
+//apply() : It is similar as call(), but difference is the it take arguments as an array.
+
+getName.apply(name2, ["Kolegaon", "Dharashiv"]);
+getName.apply(name, ["Kolegaon", "Pune"]);
+
+//bind() : It is similar as call(), but is create a function when the function is called it set the keyword to the first argument.
+
+let bindMethod = getName.bind(name, "Kolegaon", "Pune");
+let bindMethod2 = getName.bind(name2, "Kolegaon", "Dharashiv");
+
 bindMethod();
-
-console.log(bindMethod2);
 bindMethod2();
-
