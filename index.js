@@ -1,17 +1,15 @@
-const Person = {
-   name : "Rushikesh",
-   age : 23,
-   occupition : "Software developer"
+function* iteratorFun(){
+   let count = 0;
+   for(let i=0; i<5; i++){
+      count ++;
+      yield i;
+   }
+   return count;
 }
 
-//Before es6
-const name1 = Person.name;
-const age1 = Person.age;
+let iterator = iteratorFun();
 
-console.log("Name : " + name1 + " Age : " + age1);
+console.log(iterator.next());
+console.log(iterator.next());
 
-//ES6
-
-const {name , age} = Person;
-console.log(name, age);
 
