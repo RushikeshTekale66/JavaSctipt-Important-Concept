@@ -1,15 +1,19 @@
-function* iteratorFun(){
-   let count = 0;
-   for(let i=0; i<5; i++){
-      count ++;
-      yield i;
-   }
-   return count;
+let a = 10;
+let b = '10';
+
+// Check the value not datatype : pass by value
+if(a==b){
+   console.log("Equal");
+}
+else{
+   console.log("Not equal");
 }
 
-let iterator = iteratorFun();
-
-console.log(iterator.next());
-console.log(iterator.next());
-
-
+//check the value & datatype also : pass by referance
+if(a===b){
+   console.log("Equal");  
+}
+else{
+   console.log("Not equal");
+   
+}
