@@ -1,13 +1,9 @@
-(function fun(){
-   let a = 10;
-   let b = 20;
-   console.log(a+b);
-   
-}());
+function HigherOrder(){
+   return function(){
+      console.log("Higher Order function");
+      
+   }
+}
 
-(function(){
-   let a = 10;
-   let b = 20;
-   console.log(b-a);
-   
-}())
+let x = HigherOrder();
+x();
