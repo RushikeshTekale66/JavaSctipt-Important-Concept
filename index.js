@@ -1,8 +1,7 @@
-function SayHello(){
-   console.log("Hellow ", this.name);
-   
+function add(a){
+   return function(b){
+      console.log(a+b);
+      
+   }
 }
-let obj = {name:"Rushikesh", roll: 124};
-
-let x = SayHello.bind(obj);
-x();
+add(10)(10);
