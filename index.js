@@ -1,9 +1,8 @@
-function HigherOrder(){
-   return function(){
-      console.log("Higher Order function");
-      
-   }
+function SayHello(){
+   console.log("Hellow ", this.name);
+   
 }
 
-let x = HigherOrder();
-x();
+let obj = {name:"Rushikesh", roll: 124};
+
+SayHello.call(obj);
