@@ -1,7 +1,8 @@
-function SayHello(message){
-   console.log("Hellow ", this.name, message);
+function SayHello(){
+   console.log("Hellow ", this.name);
    
 }
 let obj = {name:"Rushikesh", roll: 124};
 
-SayHello.apply(obj, ["I am ok"]);
+let x = SayHello.bind(obj);
+x();
